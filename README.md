@@ -37,7 +37,7 @@ If you don't have yarn (I highly advise to switch to yarn though), npm still wor
 
 `localhost:port/fwd/google.com` will forward to **google.com**
 
-`localhost:8080/fwd/https%3A%2F%2Fgoogle.com` will forward to **https://google.com**
+`localhost:port/fwd/https%3A%2F%2Fgoogle.com` will forward to **https://google.com**
 
 
 ## Deploy
