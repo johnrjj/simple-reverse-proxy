@@ -3,7 +3,9 @@
 Super simple reverse proxy. I use it to get around CORS requests for the client without having any extra web server complexity. Can be rate limited easily through AWS.
 
 If you don't what a reverse proxy is: a reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client as if they originated from the proxy server itself [(via wikipedia)](https://en.wikipedia.org/wiki/Reverse_proxy).
-A client browser has cross-origin (CORS) problems, and a reverse proxy gets around that by hosting the reverse proxy on the same domain as the web application. A browser is limited where it can make requests to, a reverse proxy can make requests wherever it wants.
+A client browser has cross-origin (CORS) problems, and a reverse proxy gets around that by hosting the reverse proxy on the same domain as the web application. 
+
+tl;dr: A browser is limited where it can make requests to, a reverse proxy can make requests wherever it wants.
 
 
 ## Install
