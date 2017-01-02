@@ -42,4 +42,4 @@ If you don't have yarn (I highly advise to switch to yarn though), npm still wor
 
 ## Deploy
 
-Use [Now](https://zeit.co/now) to deploy your app with one command. Simply install now and run `now` in the project's root directory.
+Use [Now](https://zeit.co/now) to deploy your app with one command. Simply install [Now](https://zeit.co/now) and run `now` in the project's root directory.
