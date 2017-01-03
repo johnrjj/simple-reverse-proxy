@@ -43,8 +43,8 @@ If you don't have yarn (I highly advise to switch to yarn though), npm still wor
 
 `localhost:port/fwd/https%3A%2F%2Fgoogle.com` will forward to **https://google.com**
 
-`localhost:port/cors/ttps%3A%2F%2Fmyjira.atlassian.net%2Frest%2Fapi%2Flatest%2Fproject` will send a request to **https://myjira.atlassian.net/rest/api/latest/project** with user's headers intact
-and return a payload of the response {err, response} as json. This gets around JIRA's CORS limitations.
+`localhost:port/cors/https%3A%2F%2Fmyjira.atlassian.net%2Frest%2Fapi%2Flatest%2Fproject` will send a request to **https://myjira.atlassian.net/rest/api/latest/project**  on behalf of the user, with user's headers intact
+and return a payload of the response {err, response} as json. This paticular example gets around JIRA's CORS limitations placed on a browser. Simply JSON.parse() to read the response.
 
 
 ## Deploy
