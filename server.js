@@ -3,6 +3,7 @@ import logger from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 import proxy from 'express-http-proxy';
+import request from 'request';
 
 // Middleware to add url to req context (req.url)
 const addForwardUrlToRequest = (req, res, next) => {
@@ -35,6 +36,17 @@ app.get('/healthcheck', (req, res) => res.sendStatus(200));
 // - URL Forwarding Route
 app.get('/fwd/:url', addForwardUrlToRequest, proxyRequest);
 
+
+app.get('/cors/:url', addForwardUrlToRequest,  (req, res) => {
+  const { url } = req;
+  request(url, (err, response, body) => {
+    res.json({
+      err,
+      response,
+      body
+    });
+  });
+});
 // 404 (Last route assuming we didn't hit any of the others.)
 app.use((req, res, next) => {
   const err = new Error('Not Found');
