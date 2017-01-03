@@ -34,12 +34,17 @@ If you don't have yarn (I highly advise to switch to yarn though), npm still wor
 
 **Reverse Proxy** `localhost:port/fwd/:url` where **:url** is the encoded url to forward to
 
+**CORS Bypassing** `localhost:port/cors/:url` where **:url** is the encoded url to make a request to, on behalf of the consumer
+
 
 ####Example:
 
 `localhost:port/fwd/google.com` will forward to **google.com**
 
 `localhost:port/fwd/https%3A%2F%2Fgoogle.com` will forward to **https://google.com**
+
+`localhost:port/cors/ttps%3A%2F%2Fmyjira.atlassian.net%2Frest%2Fapi%2Flatest%2Fproject` will send a request to **https://myjira.atlassian.net/rest/api/latest/project** with user's headers intact
+and return a payload of the response {err, response} as json. This gets around JIRA's CORS limitations.
 
 
 ## Deploy
