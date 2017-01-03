@@ -38,12 +38,25 @@ app.get('/fwd/:url', addForwardUrlToRequest, proxyRequest);
 
 
 app.get('/cors/:url', addForwardUrlToRequest,  (req, res) => {
-  const { url } = req;
-  request(url, (err, response, body) => {
+  const { url, headers } = req;
+  const overrides = {
+    origin: undefined,
+    host: undefined,
+    referer: undefined,
+  };
+  // Combine headers from user request and overrides to allow proxy...
+  // i.e. auth header will still come through, but origin will be refreshed at request time.
+  const headersToSend = Object.assign({}, headers, overrides);
+  const opts = {
+    url,
+    timeout: 7000,
+    headersToSend,
+  };
+  request(opts, (err, response, body) => {
     res.json({
       err,
       response,
-      body
+      body,
     });
   });
 });
