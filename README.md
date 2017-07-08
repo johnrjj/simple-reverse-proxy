@@ -32,9 +32,9 @@ If you don't have yarn (I highly advise to switch to yarn though), npm still wor
 
 **Healthcheck** `localhost:port/healthcheck` returns a 200.
 
-**Reverse Proxy** `localhost:port/fwd/:url` where **:url** is the encoded url to forward to
+**Normal Proxy** `localhost:port/fwd/:url` where **:url** is the encoded url to forward to
 
-**CORS Bypassing** `localhost:port/cors/:url` where **:url** is the encoded url to make a request to, on behalf of the consumer
+**Reverse Proxy** `localhost:port/cors/:url` where **:url** is the encoded url to make a request to, on behalf of the consumer
 
 
 ####Example:
